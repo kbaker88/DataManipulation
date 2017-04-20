@@ -24,7 +24,7 @@ static void Utility_FloatToChar(float Value, unsigned int Precision,
 		{
 			ReturnBuffer[0] = '0';
 			ReturnBuffer[1] = '.';
-			for (int i = 0; i < Precision; i++)
+			for (int i = 0; i < (int)Precision; i++)
 			{
 				ReturnBuffer[2 + i] = '0';
 			}
@@ -78,7 +78,8 @@ static void Utility_FloatToChar(float Value, unsigned int Precision,
 
 			// NOTE: Break down IntegerPart into a char buffer
 			// NOTE: It will be read in backwards using remainders
-			while ((IntegerPart > 0) && (IntegerLength < MaxDigitSignificanBuffer))
+			while ((IntegerPart > 0) && (IntegerLength <
+				MaxDigitSignificanBuffer))
 			{
 				IntegerBuffer[IntegerLength] = (IntegerPart % 10) + 48;
 				IntegerLength++;
@@ -104,8 +105,8 @@ static void Utility_FloatToChar(float Value, unsigned int Precision,
 				{
 					// NOTE: Decimal result += 1 / 2^(position after .) * 1000000000
 					DecimalResult +=
-						(int)((float)(1.0f / (float)Math_Power(2, multiplier))
-							* 1000000000.0f);
+						(int)((float)(1.0f / (float)Math_Power(2,
+							multiplier)) * 1000000000.0f);
 				}
 				multiplier++;
 			}
@@ -134,8 +135,8 @@ static void Utility_FloatToChar(float Value, unsigned int Precision,
 				{
 					// TODO: Check the rounding errors on this calculation
 					DecimalResult +=
-						(int)((float)(1.0f / (float)Math_Power(2, multiplier))
-							* 1000000000.0f);
+						(int)((float)(1.0f / (float)Math_Power(2,
+							multiplier)) * 1000000000.0f);
 				}
 				multiplier++;
 			}
@@ -197,7 +198,8 @@ static void Utility_FloatToChar(float Value, unsigned int Precision,
 		// NOTE: Error from this decimal length not taking into account
 		//		 the leading 0's after the . and before the first set bit
 		// TODO: Take into account the leader 0's into the decimal length
-		while ((DecimalResult > 0) && (DecimalLength < MaxDigitSignificanBuffer))
+		while ((DecimalResult > 0) && (DecimalLength <
+			MaxDigitSignificanBuffer))
 		{
 			DecimalBuffer[DecimalLength] = (DecimalResult % 10) + 48;
 			DecimalLength++;

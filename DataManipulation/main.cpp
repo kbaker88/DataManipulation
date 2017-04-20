@@ -33,31 +33,11 @@ int main()
 	cout << endl << endl;
 
 
-	int IntArray[20];
-	IntArray[0] = 8;
-	IntArray[1] = 23;
-	IntArray[2] = 9;
-	IntArray[3] = 1;
-	IntArray[4] = 85;
-	IntArray[5] = 3465;
-	IntArray[6] = 3; 
-	IntArray[7] = 9;
-	IntArray[8] = 0;
-	IntArray[9] = 12;
+	int IntArray[20] = { 8, 23, 9, 1, 85, 3465, 3, 9, 0, 12, 13,
+	53, 5, 7, 6, 743, 43, 23, 85, -1 };
 
-	IntArray[10] = 13;
-	IntArray[11] = 53;
-	IntArray[12] = 5;
-	IntArray[13] = 7;
-	IntArray[14] = 6;
-	IntArray[15] = 743;
-	IntArray[16] = 43;
-	IntArray[17] = 23;
-	IntArray[18] = 85;
-	IntArray[19] = -1;
-
-	QuickSort(IntArray, 0, 19);
-	//MergeSort(IntArray, 20);
+	//QuickSort(IntArray, 0, 19);
+	MergeSort(IntArray, 20);
 
 	for (unsigned int i = 0; i < 20; i++)
 	{

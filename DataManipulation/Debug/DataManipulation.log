@@ -1,5 +1,3 @@
 ﻿  main.cpp
-c:\users\kevin\documents\visual studio 2017\projects\datamanipulation\datamanipulation\conversions.h(27): warning C4018: '<': signed/unsigned mismatch
-c:\users\kevin\documents\visual studio 2017\projects\datamanipulation\datamanipulation\sort.h(95): warning C4715: 'MergeSort': not all control paths return a value
-  DataManipulation.vcxproj -> C:\Users\Kevin\documents\visual studio 2017\Projects\DataManipulation\Debug\DataManipulation.exe
-  DataManipulation.vcxproj -> C:\Users\Kevin\documents\visual studio 2017\Projects\DataManipulation\Debug\DataManipulation.pdb (Partial PDB)
+  DataManipulation.vcxproj -> C:\Users\kevin\Documents\GitHub\DataManipulation\Debug\DataManipulation.exe
+  DataManipulation.vcxproj -> C:\Users\kevin\Documents\GitHub\DataManipulation\Debug\DataManipulation.pdb (Partial PDB)

@@ -70,28 +70,31 @@ void MergeSort_Merge(int* Left, unsigned int LeftLength,
 
 }
 
-int* MergeSort(int* Arr, unsigned int Length)
+void MergeSort(int* Arr, unsigned int Length)
 {
 	if (Length < 2)
 	{
-		return Arr;
+		//return Arr;
 	}
-	unsigned int Middle = Length / 2;
-	int* Left = new int[Middle];
-	int* Right = new int[Length - Middle];
-	for (unsigned int i = 0; i < Middle; i++)
+	else
 	{
-		Left[i] = Arr[i];
+		unsigned int Middle = Length / 2;
+		int* Left = new int[Middle];
+		int* Right = new int[Length - Middle];
+		for (unsigned int i = 0; i < Middle; i++)
+		{
+			Left[i] = Arr[i];
+		}
+		for (unsigned int i = Middle; i < Length; i++)
+		{
+			Right[i - Middle] = Arr[i];
+		}
+		MergeSort(Left, Middle);
+		MergeSort(Right, Length - Middle);
+		MergeSort_Merge(Left, Middle, Right, Length - Middle, Arr);
+		delete[] Left;
+		delete[] Right;
 	}
-	for (unsigned int i = Middle; i < Length; i++)
-	{
-		Right[i - Middle] = Arr[i];
-	}
-	MergeSort(Left, Middle);
-	MergeSort(Right, Length - Middle);
-	MergeSort_Merge(Left, Middle, Right, Length - Middle, Arr);
-	delete[] Left;
-	delete[] Right;
 }
 
 #endif

@@ -1,0 +1,60 @@
+
+
+Hamiltonian cycle(tour) - A path which visits every vertex exactly once.
+
+NP - nondeterministic polynomial time - a problem that can be verified
+in polynomial time but unknown to be solvable in polynomial time. 
+P - polynomial time
+
+asymptotic - line that approaches a curve or value but never touches.
+degenerate tree - parent nodes only have one child node, creating a 
+				  structure more similar to a linked list. 
+
+pigeonhole principle (birthday problem)
+
+Data Structures:
+	- Hash Table:
+		An array of buckets which uses a hash function to insert
+		elements. Ideally each insertion will get it's own index
+		in the array.
+		* Load Faction is entries / buckets
+		* Collision resolution with open adressing or separate chaining
+
+	- Binary Tree:
+		K-ary tree with k = 2. Each node can only have at most two
+		children. Doesn't necessarily have a labeling function to
+		give the nodes values.
+
+	- Binary Search Tree:
+		Binary Tree with the property that a node's key must be
+		greater than or equal to it's left child and less than
+		or equal to it's right child.
+
+	- Huffman Encoding (Tree):
+		Binary tree with the left child denoting a 0 and right
+		child denoting a 1 for a binary code to retrieve a
+		leaf of the tree. The more weight a leaf has, the
+		fewer levels from the tree it is located.
+
+Algorithms:
+	- Strassen's Algorithm: 
+		For Matrix multiplication ~O(n^2.84)
+		* Only practical for matrices with dimensions over 1,000
+		* Coppersmith-Winograd algorithm is faster for matrices 
+		  too large for modern computers
+	
+	- Humffman Encoding:
+		Add a weight value to every member of an alphabet. Combine
+		the two lowest weighted members of the alphabet with their
+		combined weights creating the key to their new root node.
+		Continue combining until one tree is remaining containing
+		the entire alphabet
+
+	- Asymetric numerical systems
+		Encoding algorithm
+
+	- Dijkstra's:
+		Shortest Path algorithm
+
+	- A*:
+		Pathfinding algorithm
