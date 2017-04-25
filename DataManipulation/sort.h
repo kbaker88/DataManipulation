@@ -74,7 +74,7 @@ void MergeSort(int* Arr, unsigned int Length)
 {
 	if (Length < 2)
 	{
-		//return Arr;
+	
 	}
 	else
 	{

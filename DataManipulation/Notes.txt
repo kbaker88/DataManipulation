@@ -16,11 +16,15 @@ Concepts:
 	- Memory Stack:
 		Stores static variables in RAM. Each thread gets its own Stack.
 		The size of a stack is static (note stack overflows).
+
 	- Memory Heap:
 		Stores dynamic variables in RAM. All threads share one Heap. Size
 		of a heap is dynamic. Heaps can suffer from memory fragmentation.
+
 	- Logical Memory Address:
+
 	- Physical Memory Address:
+
 	- Memory Paging:
 		Done by the Memory Management Unit(MMU) part of the CPU. Paging
 		splits RAM into equal size chunks.

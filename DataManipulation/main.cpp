@@ -24,11 +24,10 @@ void* MemPtr = Memory;
 
 char* AllocateCharArr(unsigned int Size)
 {
-	char *Start;
-	char *End;
-	Start = (char*)MemPtr;
-	End = Start + Size;
-	*End = '>';
+	char *Start = (char*)MemPtr;
+	char *End = Start + Size;
+	*End = '\0';
+	MemPtr = End + 1;
 	return Start;
 }
 
@@ -39,10 +38,8 @@ int main()
 	GetSystemInfo(&SystemInfo);
 	unsigned int NumberOfPages = GB / SystemInfo.dwPageSize;
 
-	//void* Memory = 0;
-	//void* MemPtr = Memory;
-
-	Memory = VirtualAlloc(0, NumberOfPages * SystemInfo.dwPageSize, MEM_COMMIT, PAGE_READWRITE);
+	Memory = VirtualAlloc(0, NumberOfPages * SystemInfo.dwPageSize,
+		MEM_COMMIT, PAGE_READWRITE);
 
 	Test *Testing = (Test*)Memory;
 	Testing->x = 10;
@@ -64,6 +61,9 @@ int main()
 	CharTest[2] = 'c';
 	CharTest[3] = 'd';
 	CharTest[11] = 'z';
+
+	char* Ending = (char *)MemPtr;
+	*Ending = 'E';
 
 	VirtualFree(Memory, NumberOfPages * SystemInfo.dwPageSize, 
 		MEM_RELEASE);
