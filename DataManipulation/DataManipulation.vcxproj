@@ -115,8 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithms.h" />
+    <ClInclude Include="bitmanipulation.h" />
     <ClInclude Include="conversions.h" />
     <ClInclude Include="datastructures.h" />
+    <ClInclude Include="memory.h" />
     <ClInclude Include="sort.h" />
   </ItemGroup>
   <ItemGroup>

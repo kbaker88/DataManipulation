@@ -1,9 +1,12 @@
 #include <iostream>
 #include <Windows.h>
+
 #include "sort.h"
 #include "datastructures.h" 
 #include "algorithms.h"
 #include "conversions.h"
+#include "memory.h"
+#include "bitmanipulation.h"
 
 #include <stdio.h>
 
@@ -13,26 +16,11 @@ using namespace std;
 #define MB (KB * KB)
 #define GB (MB * KB)
 
-struct Test
-{
-	int x, y, z;
-	char a;
-};
-
-void* Memory = 0;
-void* MemPtr = Memory;
-
-char* AllocateCharArr(unsigned int Size)
-{
-	char *Start = (char*)MemPtr;
-	char *End = Start + Size;
-	*End = '\0';
-	MemPtr = End + 1;
-	return Start;
-}
-
 int main()
 {
+	///////////////////////////////////////////////////////
+	// MEMORY_ALLOCATION
+#if 0
 	_SYSTEM_INFO SystemInfo;
 
 	GetSystemInfo(&SystemInfo);
@@ -55,7 +43,7 @@ int main()
 	Testing2->z = 16;
 	MemPtr = (char*)MemPtr + sizeof(Test);
 
-	char* CharTest = AllocateCharArr(12);
+	char* CharTest = Memory_AllocateCharArr(12);
 	CharTest[0] = 'a';
 	CharTest[1] = 'b';
 	CharTest[2] = 'c';
@@ -67,7 +55,38 @@ int main()
 
 	VirtualFree(Memory, NumberOfPages * SystemInfo.dwPageSize, 
 		MEM_RELEASE);
+#endif
+	///////////////////////////////////////////////////
+	// BIT_MANIPULATION
+#if 1
+	unsigned long long Value = 202;
 
+	int *x = new int[2]{};
+	x[0] = 1;
+	x[1] = 2;
+
+	int* y = x;
+	for (int i = 0; i < 5; i++)
+	{
+		if (y)
+		{
+			cout << x[i] << endl;
+		}
+		y++;
+	}
+	delete[] x;
+	cout << (Value & 0xF) << endl;
+	cout << ((Value & 0xF0) >> 4) << endl;
+
+	int * TestPtr = Bit_ReturningPointer();
+	Bit_PointerParam(&TestPtr);
+	//Bit_PointerParam(&Bit_ReturningPointer()); // ERROR
+	delete TestPtr;
+
+#endif
+	//////////////////////////////////////////////////
+	// TYPE_CONVERSIONS
+#if 0
 	char Buffer[16] = {};
 	float Float = 0.0f;
 
@@ -88,7 +107,10 @@ int main()
 		cout << FloatToCharBuffer[i];
 	}
 	cout << endl << endl;
-
+#endif
+	/////////////////////////////////////////////////
+	// SORT_ALGORITHMS
+#if 0
 	int IntArray[20] = { 8, 23, 9, 1, 85, 
 		3465, 3, 9, 0, 12, 13, 53, 5, 7,
 		6, 743, 43, 23, 85, -1 };
@@ -101,7 +123,10 @@ int main()
 		cout << IntArray[i] << " ";
 	}
 	cout << endl;
-
+#endif
+	////////////////////////////////////////////////////
+	// GRAPH_ALGORITHMS
+#if 0
 	int graph[MaxVNumber][MaxVNumber] = 
 	{ 
 	{ 0,  4,  0,  0,  0,  0,  0,  8,  0 },
@@ -124,8 +149,9 @@ int main()
 	}
 
 	cout << endl;
+#endif
 
+	//////////////////////////////////////////////////////
 	system("pause");
-
 	return 0;
 }
