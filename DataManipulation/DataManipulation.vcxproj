@@ -116,6 +116,7 @@
   <ItemGroup>
     <ClInclude Include="algorithms.h" />
     <ClInclude Include="bitmanipulation.h" />
+    <ClInclude Include="compression.h" />
     <ClInclude Include="conversions.h" />
     <ClInclude Include="datastructures.h" />
     <ClInclude Include="memory.h" />
