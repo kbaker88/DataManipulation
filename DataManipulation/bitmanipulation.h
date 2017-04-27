@@ -1,6 +1,5 @@
-#ifndef BITMANIPULATION.H
-#define BITMANIPULATION.H
-
+#ifndef BITMANIPULATION_H
+#define BITMANIPULATION_H
 
 int* Bit_ReturningPointer()
 {

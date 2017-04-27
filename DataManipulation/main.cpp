@@ -20,7 +20,7 @@ int main()
 {
 	///////////////////////////////////////////////////////
 	// MEMORY_ALLOCATION
-#if 0
+#if 1
 	_SYSTEM_INFO SystemInfo;
 
 	GetSystemInfo(&SystemInfo);
@@ -50,6 +50,14 @@ int main()
 	CharTest[3] = 'd';
 	CharTest[11] = 'z';
 
+	int *IntTest = Memory_AllocateIntArr(64);
+	IntTest[64] = 0xFFFFFFFF;
+	IntTest[0] = 0xFFFFFFFF;
+	IntTest[32] = 100;
+	float *FloatTest = Memory_AllocateFloatArr(64);
+	FloatTest[0] = -100.0524f;
+	FloatTest[64] = -100.0524f;
+
 	char* Ending = (char *)MemPtr;
 	*Ending = 'E';
 
@@ -58,7 +66,7 @@ int main()
 #endif
 	///////////////////////////////////////////////////
 	// BIT_MANIPULATION
-#if 1
+#if 0
 	unsigned long long Value = 202;
 
 	int *x = new int[2]{};
