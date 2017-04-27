@@ -75,3 +75,7 @@ Algorithms:
 
 	- A*:
 		Pathfinding algorithm
+
+	- Quicksort
+
+	- MergeSort
