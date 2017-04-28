@@ -20,7 +20,7 @@ int main()
 {
 	///////////////////////////////////////////////////////
 	// MEMORY_ALLOCATION
-#if 1
+#if 0
 	_SYSTEM_INFO SystemInfo;
 
 	GetSystemInfo(&SystemInfo);
@@ -66,7 +66,7 @@ int main()
 #endif
 	///////////////////////////////////////////////////
 	// BIT_MANIPULATION
-#if 0
+#if 1
 	unsigned long long Value = 202;
 
 	int *x = new int[2]{};
@@ -90,6 +90,19 @@ int main()
 	Bit_PointerParam(&TestPtr);
 	//Bit_PointerParam(&Bit_ReturningPointer()); // ERROR
 	delete TestPtr;
+
+	int z = 2;
+	int c = 3;
+
+	z ^= (c ^= (z ^= c));
+
+
+	cout << p << " " << o << endl;
+
+	cout << z << " " << c << endl;
+
+	int solution = (int)&((char*)z)[c];
+	cout << solution << endl;
 
 #endif
 	//////////////////////////////////////////////////
