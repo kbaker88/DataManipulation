@@ -16,5 +16,11 @@ bool Practice_StringIsPermutation(char* CharStringA,
 bool Practice_StringIsPermutation(unsigned short* UnicodeStringA,
 	unsigned short* UnicodeStringB);
 void Practice_StringReplaceSpaces(char* CharString);
+void Practice_StringBasicCompress(char* CharString);
 
+// TODO 
+void Practice_StringRotateMatrix90(char* NbyNMatrix); // can you do in place?
+void Practice_StringMatrixZeroRowColumn(char* MbyNMatrix);
+bool Practice_StringIsSubstring(char* CharStringA, char* CharStringB);
+bool Practice_StringIsRotation(char* CharStringA, char* CharStringB);
 #endif

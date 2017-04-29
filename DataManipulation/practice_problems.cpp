@@ -1,6 +1,5 @@
 #include "practice_problems.h"
 
-#define IN_PLACE 0
 #define NO_ADDITIONAL_DATA_STRUCTS 1
 
 bool Practice_StringAllUnique(char* CharString)
@@ -291,8 +290,6 @@ bool Practice_StringIsPermutation(unsigned short* UnicodeStringA,
 
 	return false;
 }
-// Test.this.string......
-// Test%20
 
 void Practice_StringReplaceSpaces(char* CharString)
 {
@@ -329,5 +326,87 @@ void Practice_StringReplaceSpaces(char* CharString)
 				CharStringEnd--;
 			}
 		}
+	}
+}
+
+void Practice_StringReplaceSpaces(unsigned short* UnicodeString)
+{
+	if (UnicodeString)
+	{
+		unsigned short* UnicodeStringEnd = UnicodeString;
+		while (*UnicodeStringEnd)
+		{
+			UnicodeStringEnd++;
+		}
+		UnicodeStringEnd--;
+
+		unsigned short* UnicodeStringItr = UnicodeStringEnd;
+		while (*UnicodeStringItr == ' ')
+		{
+			UnicodeStringItr--;
+		}
+		while (UnicodeStringItr > UnicodeString)
+		{
+			if (*UnicodeStringItr == ' ')
+			{
+				*UnicodeStringEnd = '0';
+				UnicodeStringEnd--;
+				*UnicodeStringEnd = '2';
+				UnicodeStringEnd--;
+				*UnicodeStringEnd = '%';
+				UnicodeStringEnd--;
+				UnicodeStringItr--;
+			}
+			else
+			{
+				*UnicodeStringEnd = *UnicodeStringItr;
+				UnicodeStringItr--;
+				UnicodeStringEnd--;
+			}
+		}
+	}
+}
+
+// aabbbcceeddda = a2b3c2e2d3a1
+// abdddccceee = a1b1d3c3e3
+// abcd = a1b1c1d1
+
+void Practice_StringBasicCompress(char* CharString)
+{
+	if (CharString && (CharString + 1))
+	{
+		char* CharStringEnd = CharString;
+		while (*CharStringEnd)
+		{
+			CharStringEnd++;
+		}
+		CharStringEnd--;
+
+		char *CompressedCharString = new char[CharStringEnd - CharString]{};
+		CompressedCharString[0] = *CharString;
+		int CompressedItr = 1;
+		char* CharItr = CharString + 1;
+		int Count = 1;
+		while (*CharString)
+		{
+			if (*CharString == *CharItr)
+			{
+				Count++;
+				CharItr++;
+			}
+			else
+			{
+				CompressedCharString[CompressedItr] = Count;
+				CompressedItr++;
+				CompressedCharString[CompressedItr] = *CharItr;
+				CompressedItr++;
+				Count = 1;
+				CharString = CharItr;
+				CharItr++;
+			}
+		}
+
+		int x = 0;
+		delete[] CompressedCharString;
 	}
 }

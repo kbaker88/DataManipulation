@@ -228,10 +228,12 @@ int main()
 		cout << "Character String B is not a permutation of Character String A" << endl;
 	}
 
-	char CharStringReplace[23] = { 'T', 'e', 's', 't', 'i', 'n', 'g', ' ',
-		't', 'h', 'i', 's', ' ', 's', 't', 'r', 'i', 'n', 'g', ' ', ' ', ' ', ' '};
+	char CharStringReplace[24] = { 'T', 'e', 's', 't', 'i', 'n', 'g', ' ',
+		't', 'h', 'i', 's', ' ', 's', 't', 'r', 'i', 'n', 'g', ' ', ' ', ' ', ' ', '\0' };
 	Practice_StringReplaceSpaces(CharStringReplace);
 	cout << CharStringReplace << endl;
+
+	Practice_StringBasicCompress("aabbbcddeeee\0");
 #endif
 	//////////////////////////////////////////////////////
 
