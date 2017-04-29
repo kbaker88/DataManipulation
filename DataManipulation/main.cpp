@@ -7,6 +7,7 @@
 #include "conversions.h"
 #include "memory.h"
 #include "bitmanipulation.h"
+#include "practice_problems.h"
 
 #include <stdio.h>
 
@@ -15,6 +16,13 @@ using namespace std;
 #define KB 1024
 #define MB (KB * KB)
 #define GB (MB * KB)
+
+// MEMORY_ALLOCATION
+// BIT_MANIPULATION
+// TYPE_CONVERSIONS
+// SORT_ALGORITHMS
+// GRAPH_ALGORITHMS
+// PRACTICE_PROBLEMS
 
 int main()
 {
@@ -66,7 +74,7 @@ int main()
 #endif
 	///////////////////////////////////////////////////
 	// BIT_MANIPULATION
-#if 1
+#if 0
 	unsigned long long Value = 202;
 
 	int *x = new int[2]{};
@@ -131,13 +139,21 @@ int main()
 #endif
 	/////////////////////////////////////////////////
 	// SORT_ALGORITHMS
-#if 0
+#if 1
 	int IntArray[20] = { 8, 23, 9, 1, 85, 
 		3465, 3, 9, 0, 12, 13, 53, 5, 7,
 		6, 743, 43, 23, 85, -1 };
 
-	//QuickSort(IntArray, 0, 19);
-	MergeSort(IntArray, 20);
+	char CharArray[6] = { 'd', 'c', 'a', 'b', 'f', 'e' };
+
+	Sort_QuickSort(IntArray, 0, 19);
+	Sort_QuickSort(CharArray, 0, 5);
+	//Sort_MergeSort(IntArray, 20);
+	for (unsigned int i = 0; i < 6; i++)
+	{
+		cout << CharArray[i] << " ";
+	}
+	cout << endl;
 
 	for (unsigned int i = 0; i < 20; i++)
 	{
@@ -171,8 +187,54 @@ int main()
 
 	cout << endl;
 #endif
-
 	//////////////////////////////////////////////////////
+	// PRACTICE_PROBLEMS
+#if 1
+
+	if (Practice_StringAllUnique("Ttsting\0"))
+	{
+		cout << "Character string is unique" << endl;
+	}
+	else
+	{
+		cout << "Character string is not unique" << endl;
+	}
+
+	unsigned short UnicodeString[6] = {'c', 'a', 't', 0x0FFF, 0x054F, 0};
+	if (Practice_StringAllUnique(UnicodeString))
+	{
+		cout << "Unicode string is unique" << endl;
+	}
+	else
+	{
+		cout << "Unicode string is not unique" << endl;
+	}
+
+	char CharString[4] = { 'c', 'a', 't', 0 };
+	Practice_StringReverse(CharString);
+	for (unsigned int i = 0; i < 4; i++)
+		cout << CharString[i];
+	cout << endl;
+
+	char CharStringA[5] = { 'v', 'b', 'a', 'd', '\0' };
+	char CharStringB[5] = { 'd', 'v', 'a', 'b', '\0' };
+
+	if (Practice_StringIsPermutation(CharStringA, CharStringB))
+	{
+		cout << "Character String B is a permutation of Character String A" << endl;
+	}
+	else
+	{
+		cout << "Character String B is not a permutation of Character String A" << endl;
+	}
+
+	char CharStringReplace[23] = { 'T', 'e', 's', 't', 'i', 'n', 'g', ' ',
+		't', 'h', 'i', 's', ' ', 's', 't', 'r', 'i', 'n', 'g', ' ', ' ', ' ', ' '};
+	Practice_StringReplaceSpaces(CharStringReplace);
+	cout << CharStringReplace << endl;
+#endif
+	//////////////////////////////////////////////////////
+
 	system("pause");
 	return 0;
 }

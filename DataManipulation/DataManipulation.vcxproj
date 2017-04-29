@@ -112,6 +112,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="practice_problems.cpp" />
+    <ClCompile Include="sort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithms.h" />
@@ -120,6 +122,7 @@
     <ClInclude Include="conversions.h" />
     <ClInclude Include="datastructures.h" />
     <ClInclude Include="memory.h" />
+    <ClInclude Include="practice_problems.h" />
     <ClInclude Include="sort.h" />
   </ItemGroup>
   <ItemGroup>
