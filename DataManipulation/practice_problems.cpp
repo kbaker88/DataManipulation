@@ -373,40 +373,64 @@ void Practice_StringReplaceSpaces(unsigned short* UnicodeString)
 
 void Practice_StringBasicCompress(char* CharString)
 {
+	char* CharFrontItr = CharString;
 	if (CharString && (CharString + 1))
 	{
 		char* CharStringEnd = CharString;
+		unsigned int CharStringLength = 0;
 		while (*CharStringEnd)
 		{
 			CharStringEnd++;
+			CharStringLength++;
 		}
 		CharStringEnd--;
 
 		char *CompressedCharString = new char[CharStringEnd - CharString]{};
 		CompressedCharString[0] = *CharString;
-		int CompressedItr = 1;
-		char* CharItr = CharString + 1;
+		unsigned int CompressedItr = 1;
+		CharStringEnd = CharString + 1;
 		int Count = 1;
-		while (*CharString)
+		while (*CharFrontItr && 
+			(CompressedItr < CharStringLength))
 		{
-			if (*CharString == *CharItr)
+			if (*CharFrontItr == *CharStringEnd)
 			{
 				Count++;
-				CharItr++;
+				CharStringEnd++;
 			}
 			else
 			{
-				CompressedCharString[CompressedItr] = Count;
+				CompressedCharString[CompressedItr] = Count + 48;
 				CompressedItr++;
-				CompressedCharString[CompressedItr] = *CharItr;
+				CompressedCharString[CompressedItr] = *CharStringEnd;
 				CompressedItr++;
 				Count = 1;
-				CharString = CharItr;
-				CharItr++;
+				CharFrontItr = CharStringEnd;
+				CharStringEnd++;
 			}
 		}
+		if (CompressedItr < CharStringLength)
+		{
 
-		int x = 0;
+			for (unsigned int i = 0; i < CharStringLength; i++)
+			{
+				CharString[i] = CompressedCharString[i];
+			}
+		}
+		else
+		{
+			// NOTE: Don't edit CharString, return original string.
+		}
 		delete[] CompressedCharString;
 	}
 }
+
+void Practice_StringRotateMatrix90(char* NbyNMatrix)
+{
+	//if (NbyNMatrix)
+	//{
+	//	for (unsigned int i; i< )
+	//}
+}
+
+

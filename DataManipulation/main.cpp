@@ -232,8 +232,10 @@ int main()
 		't', 'h', 'i', 's', ' ', 's', 't', 'r', 'i', 'n', 'g', ' ', ' ', ' ', ' ', '\0' };
 	Practice_StringReplaceSpaces(CharStringReplace);
 	cout << CharStringReplace << endl;
-
-	Practice_StringBasicCompress("aabbbcddeeee\0");
+	
+	char CharStringCompress[13] = { 'a', 'a', 'b', 'b', 'b', 'c', 'd', 'd', 'e', 'e', 'e', 'e', '\0'};
+	Practice_StringBasicCompress(CharStringCompress);
+	cout << CharStringCompress << endl;
 #endif
 	//////////////////////////////////////////////////////
 
