@@ -74,7 +74,7 @@ int main()
 #endif
 	///////////////////////////////////////////////////
 	// BIT_MANIPULATION
-#if 0
+#if 1
 	unsigned long long Value = 202;
 
 	int *x = new int[2]{};
@@ -104,13 +104,40 @@ int main()
 
 	z ^= (c ^= (z ^= c));
 
-
-	cout << p << " " << o << endl;
-
 	cout << z << " " << c << endl;
 
 	int solution = (int)&((char*)z)[c];
 	cout << solution << endl;
+
+	// Division without /, %, *
+
+	int Numerator = 10;
+	int Devisor = 5;
+
+	int temp = 1;
+	int Result = 0;
+
+	while (Devisor <= Numerator) 
+	{
+		Devisor <<= 1;
+		temp <<= 1;
+	}
+	while (temp > 1) 
+	{
+		Devisor >>= 1;
+		temp >>= 1;
+		if (Numerator >= Devisor) 
+		{
+			Numerator -= Devisor;
+			Result += temp;
+		}
+	}
+
+	cout << Result << endl;
+
+	// Multiplication without *
+
+
 
 #endif
 	//////////////////////////////////////////////////
@@ -139,7 +166,7 @@ int main()
 #endif
 	/////////////////////////////////////////////////
 	// SORT_ALGORITHMS
-#if 1
+#if 0
 	int IntArray[20] = { 8, 23, 9, 1, 85, 
 		3465, 3, 9, 0, 12, 13, 53, 5, 7,
 		6, 743, 43, 23, 85, -1 };
@@ -189,7 +216,7 @@ int main()
 #endif
 	//////////////////////////////////////////////////////
 	// PRACTICE_PROBLEMS
-#if 1
+#if 0
 
 	if (Practice_StringAllUnique("Ttsting\0"))
 	{
