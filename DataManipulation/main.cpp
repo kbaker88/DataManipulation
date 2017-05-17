@@ -20,6 +20,7 @@ using namespace std;
 // MEMORY_ALLOCATION
 // BIT_MANIPULATION
 // TYPE_CONVERSIONS
+// DATA_STRUCTURES
 // SORT_ALGORITHMS
 // GRAPH_ALGORITHMS
 // PRACTICE_PROBLEMS
@@ -74,7 +75,7 @@ int main()
 #endif
 	///////////////////////////////////////////////////
 	// BIT_MANIPULATION
-#if 1
+#if 0
 	unsigned long long Value = 202;
 
 	int *x = new int[2]{};
@@ -163,6 +164,14 @@ int main()
 		cout << FloatToCharBuffer[i];
 	}
 	cout << endl << endl;
+#endif
+	/////////////////////////////////////////////////
+	// DATA_STRUCTURES
+#if 1
+
+
+
+
 #endif
 	/////////////////////////////////////////////////
 	// SORT_ALGORITHMS

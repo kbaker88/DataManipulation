@@ -47,6 +47,20 @@ Data Structures:
 		greater than or equal to it's left child and less than
 		or equal to it's right child.
 
+	- Red-Black Tree:
+		* Search Time: O(logn)
+		* Insertion and Deletion: O(logn)
+		* Space Complexity: O(n)
+		Self-balancing Binary Search Tree where each node has an extra
+		bit which is interpreted as a color of red or black. The colors
+		are used to balance the tree on insertions and deletions.
+		The root is black
+		All leaves (null) are black
+		If a node is red, then both its children are black
+		Every path from a given node to any descendant null leaf contains
+		the same number of black nodes.
+
+
 	- Huffman Encoding (Tree):
 		Binary tree with the left child denoting a 0 and right
 		child denoting a 1 for a binary code to retrieve a
